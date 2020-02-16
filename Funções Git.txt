@@ -12,10 +12,54 @@ git add Nome.formato #adicionar arquivo especifico na area temporaria
 
 git commit -m "Comentarios das alteracoes" #adicionar os arquivos do add na area de confirmacao
 
+git commit -a -m "comentario das alteracoes" #faz a funcao das duas de cima
+
 ssh-keygen #gerar a chave ssh "der enter se quiser deixar sem senha"
 
 notepad ~/.ssh/id_rsa.pub #abrir e copiar a chave ssh para adicionar no github
 
 ssh -T git@github.com # teste a conexão
 
-git push 
+git push origin master # enviar alteracoes do ultimo commit para o repositorio remoto
+
+git clone <endereco do repositorio a ser clonado> nomedorepositorio # clonar um repositorio do github
+
+git pull origin master # atualiza o repositorio local pegando tudo do remoto
+
+cd .. #retorna ao diretorio anterior
+
+git diff # ver alteracoes dentro dos arquivos
+
+git diff --staged #ve o que tem dentro da estage area
+
+git commit --amend -m "mensagem do commit" #substitui o ultimo comiit realizado
+
+git reset HEAD nomedoarquivo.formato # remove o arquivo da estage area
+
+git checkout -- nome do arquivo.formato # retorna o arquivo ao ultimo commit
+
+git rm nomedoarquivo.formato #para remover o arquivo do repositorio
+
+git tag #ver a  lista de tag do sistema
+
+git tag -a versao -m "mensagem" #criar uma tag no commit atual
+
+git tag -a versao <chave do commit> -m "mensagem" #criar uma tag de um commit especifico
+
+git show versao # ver informacoes da tag
+
+git checkout versaodatag #retorna ao commit daquela tag
+
+git checkout master # retorna ao master do sistema 
+
+git tag -d versaodatag #deletar uma tag especifica
+
+git branch nomedobranch #criar uma ramificacao do sistema
+
+git checkout nomedobranch #altera a ramificao do sistema
+
+git checkout -b nomedobranch # faz as duas funcoes de cima ao mesmo tempo
+
+git mergen nomedobranch que quero mesclar # sempre tem de estar no princial, faz a mesclagem das ramificacoes
+
+git branch -d nomedobranch #deletar o branch ou ramificacao
