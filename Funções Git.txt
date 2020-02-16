@@ -1,0 +1,21 @@
+clear #Limpar a tela
+
+git config --global user.name "Hercules Eugenio" #Configurar o nome do usuario global
+
+git config --global user.email "herculeseugenio@rede.ulbra.br" #Configurar o email global
+
+git init . #Iniciar um novo repositório
+
+git add . #adicionar todos os arquivos da pasta na area temporaria
+
+git add Nome.formato #adicionar arquivo especifico na area temporaria
+
+git commit -m "Comentarios das alteracoes" #adicionar os arquivos do add na area de confirmacao
+
+ssh-keygen #gerar a chave ssh "der enter se quiser deixar sem senha"
+
+notepad ~/.ssh/id_rsa.pub #abrir e copiar a chave ssh para adicionar no github
+
+ssh -T git@github.com # teste a conexão
+
+git push 
