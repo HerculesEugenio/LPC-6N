@@ -1,0 +1,26 @@
+>>> Noticia.objects.create(titulo='noticia1',conteudo='noticia1',autor='fabio')
+<Noticia: noticia1>
+>>> Noticia.objects.create(titulo='noticia2',conteudo='noticia2',autor='fabio')
+<Noticia: noticia2>
+>>> Noticia.objects.create(titulo='noticia3',conteudo='noticia3',autor='fabio')
+<Noticia: noticia3>
+>>> Noticia.objects.create(titulo='noticia4',conteudo='noticia4',autor='Roberto')
+<Noticia: noticia4>
+>>> Noticia.objects.create(titulo='noticia5',conteudo='noticia5',autor='Roberto')
+<Noticia: noticia5>
+
+fabio_janeiro = Noticia.objects.filter(autor__iexact='fabio').filter(data_publicacao__month=1)
+>>> fabio_janeiro
+<QuerySet [<Noticia: noticia1>]>
+
+>>> not_roberto = Noticia.objects.exclude(autor__iexact='roberto')
+>>> not_roberto
+<QuerySet [<Noticia: noticia1>, <Noticia: noticia2>, <Noticia: noticia3>]>
+
+>>> id_6 = Noticia.objects.filter(id=6)
+>>> id_6
+<QuerySet []>
+
+>>> roberto_not_marco = Noticia.objects.filter(autor__iexact='roberto').exclude(data_publicacao__month=3)[:3]
+>>> roberto_not_marco
+<QuerySet [<Noticia: noticia5>]>
